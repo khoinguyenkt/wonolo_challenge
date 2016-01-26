@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
+gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -14,6 +15,7 @@ gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
 gem 'instagram', '~> 1.1', '>= 1.1.6'
 gem 'geocoder', '~> 1.2', '>= 1.2.14'
 gem 'geokit', '~> 1.10'
+gem 'haml', '~> 4.0', '>= 4.0.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

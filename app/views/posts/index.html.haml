@@ -1,0 +1,20 @@
+.container
+  .row
+    .col-md-12
+      %h3 Search Instagram Photos By Location
+      .row
+        .col-sm-8.map-marker
+          .panel
+            .input-group
+              %input#address.form-control{placeholder: "Please enter an Address", type: "text"}
+              %span.input-group-btn
+                %button.btn.btn-default{type: "button"}
+                  %i.fa.fa-search
+          #map-canvas
+        .col-sm-4.search-box
+          = render 'search_box'
+
+  .row.photos-box
+    .ajax-loading.hidden
+    #photos-result.row
+      = render 'instagrams'
