@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require post
 //= require moment
+//= require jquery.geocomplete.min
+//= require jquery.validate.min
 //= require_tree .
+//= require post

@@ -1,5 +1,5 @@
 - posts.each do |post|
-  .col-md-3.media-box{"data-media-id" => post.id, 'data-lat' => post.location.latitude, 'data-lng' => post.location.latitude, 'data-thumb-url' => post.images.thumbnail.url, 'data-username' => post.user.username}
+  .col-md-3.media-box{'data-lat' => post.location.latitude, 'data-lng' => post.location.longitude, 'data-thumb-url' => post.images.thumbnail.url, 'data-username' => post.user.username}
     %a.profile-link{href: get_url_user(post.user.username), target: '_blank'}
       .post-box{'data-toggle' => "tooltip", title: post.user.full_name}
         .thumb-post

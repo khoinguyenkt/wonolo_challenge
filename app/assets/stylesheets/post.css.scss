@@ -15,7 +15,7 @@ body > .container {
 
 .photos-box {
   margin: 50px auto;
-  height: 500px;
+  min-height: 500px;
 }
 
 #photos-result {
@@ -33,8 +33,60 @@ body > .container {
   margin-bottom: 6px;
 }
 
+.error {
+  color: red;
+  font-weight: normal;
+}
+
 .media-box {
-  margin-bottom: 10px;
+  .profile-link {
+    color: #000;
+  }
+  .info-top {
+    height: 40px;
+    border: 1px solid #2d6599;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+    background-color: #2d6599;
+
+    span.user-name {
+      float: left;
+      line-height: 40px;
+      padding: 0 10px;
+      font-weight: bold;
+      color: #fff;
+      max-width: 120px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    span.user-name:before {
+      content: "\f007";
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-right: 5px;
+      font-style: normal;
+    }
+
+    span.time {
+      float: right;
+      line-height: 40px;
+      padding: 0 10px;
+      color: #fff;
+      font-style: italic;
+      font-size: 12px;
+    }
+
+    span.time:before {
+      content: "\f017";
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-right: 5px;
+      font-style: normal;
+    }
+  }
+
   .info-bot {
     bottom: 50px;
     position: relative;
@@ -42,6 +94,8 @@ body > .container {
     width: 100%;
     height: 50px;
     line-height: 50px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 
     .logo-user {
       width: 30%;
@@ -67,7 +121,28 @@ body > .container {
       }
     }
 
+  }
 
+  .media-img {
+    img {
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+}
+
+.pagination {
+
+  li a {
+    border-radius: 4px;
+    color: #000;
+    border: none;
+    margin-right: 5px;
+  }
+
+  li.active a{
+    background-color: #000;
+    color: #fff;
   }
 }
 

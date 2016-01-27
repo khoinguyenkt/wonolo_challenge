@@ -11,3 +11,9 @@
     = render 'layouts/header'
     = yield
     = render 'layouts/footer'
+
+    :javascript
+      initGoogleMaps()
+      $(function () {
+        showAllPhotosOnMap()
+      });
