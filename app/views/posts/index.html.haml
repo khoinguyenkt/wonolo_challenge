@@ -17,4 +17,4 @@
   .row.photos-box
     .ajax-loading.hidden
     #photos-result.row
-      = render 'instagrams'
+      = render 'instagrams', posts: @posts if @posts.present?

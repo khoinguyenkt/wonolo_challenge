@@ -5,7 +5,7 @@
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB65xvaxH_fea3rSFDlVomyC3rbSUbyz28"
+    = javascript_include_tag "//maps.googleapis.com/maps/api/js?libraries=places&sensor=false"
 
   %body
     = render 'layouts/header'

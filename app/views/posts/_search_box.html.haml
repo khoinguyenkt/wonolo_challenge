@@ -1,17 +1,17 @@
 = form_tag '/', method: 'get', remote: true, class: 'form-horizontal', id: "search-form" do
   .form-group
-    %label.col-sm-4.control-label Radius (Km):
-    .col-sm-8
-      = text_field_tag :radius, '', placeholder: 'Please type radius in here', class: 'form-control'
-  .form-group
     %label.col-sm-4.control-label Latitude:
     .col-sm-8
-      = text_field_tag :lat, '', placeholder: 'Latitude', class: 'form-control', id: 'latitude'
+      = text_field_tag :lat, get_lat_value, placeholder: 'Latitude', class: 'form-control', id: 'latitude'
   .form-group
     %label.col-sm-4.control-label Longitude:
     .col-sm-8
-      = text_field_tag :lng, '', placeholder: 'Longitude', class: 'form-control', id: 'longitude'
+      = text_field_tag :lng, get_lng_value, placeholder: 'Longitude', class: 'form-control', id: 'longitude'
+  .form-group
+    %label.col-sm-4.control-label Radius (Km):
+    .col-sm-8
+      = text_field_tag :radius, '', placeholder: 'Radius', class: 'form-control'
   .form-group
     .col-sm-4
     .col-sm-8
-      = submit_tag 'Search' , class: 'btn btn-primary btn-search'
+      = submit_tag 'Search' , class: 'btn btn-success btn-search'

@@ -1,105 +1,22 @@
-.col-md-3.media-box
-  .post-box
-    .thumb-post
-      .info-top.time{"data-time" => '1453820543'}
-      .media-img
-        = image_tag "https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e35/12523756_1704697189776164_2012950135_n.jpg" , class: 'img-thumbnail'
-      .info-bot
-        .logo-user
-          = link_to "#", target: '_blank' do
-            .user-profile
-              .img-user{'data-toggle' => "tooltip", title: 'Khoi Nguyen'}
-                = image_tag "https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/s150x150/12407560_1514061502231213_34102038_a.jpg" , class: 'img-circle photo-profile'
-        .info-user
-          %span.pull-left.comment= 5
-          %span.pull-right.like= 5
-      .type-post
-
-.col-md-3.media-box
-  .post-box
-    .thumb-post
-      .info-top.time{"data-time" => '1453820543'}
-      .media-img
-        = image_tag "https://scontent.cdninstagram.com/hphotos-xat1/t51.2885-15/s640x640/sh0.08/e35/12599372_1519621218332811_804927763_n.jpg" , class: 'img-thumbnail'
-      .info-bot
-        .logo-user
-          = link_to "#", target: '_blank' do
-            .user-profile
-              .img-user{'data-toggle' => "tooltip", title: 'Khoi Nguyen'}
-                = image_tag "https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/s150x150/12407560_1514061502231213_34102038_a.jpg" , class: 'img-circle photo-profile'
-        .info-user
-          %span.pull-left.comment= 5
-          %span.pull-right.like= 5
-      .type-post
-
-.col-md-3.media-box
-  .post-box
-    .thumb-post
-      .info-top.time{"data-time" => '1453820543'}
-      .media-img
-        = image_tag "https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e35/12523756_1704697189776164_2012950135_n.jpg" , class: 'img-thumbnail'
-      .info-bot
-        .logo-user
-          = link_to "#", target: '_blank' do
-            .user-profile
-              .img-user{title: 'Khoi Nguyen'}
-                = image_tag "https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/s150x150/12407560_1514061502231213_34102038_a.jpg" , class: 'img-circle photo-profile'
-        .info-user
-          %span.pull-left.comment= 5
-          %span.pull-right.like= 5
-      .type-post
-
-.col-md-3.media-box
-  .post-box
-    .thumb-post
-      .info-top.time{"data-time" => '1453820543'}
-      .media-img
-        = image_tag "https://scontent.cdninstagram.com/hphotos-xat1/t51.2885-15/s640x640/sh0.08/e35/12599372_1519621218332811_804927763_n.jpg" , class: 'img-thumbnail'
-      .info-bot
-        .logo-user
-          = link_to "#", target: '_blank' do
-            .user-profile
-              .img-user{title: 'Khoi Nguyen'}
-                = image_tag "https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/s150x150/12407560_1514061502231213_34102038_a.jpg" , class: 'img-circle photo-profile'
-        .info-user
-          %span.pull-left.comment= 5
-          %span.pull-right.like= 5
-      .type-post
-
-.col-md-3.media-box
-  .post-box
-    .thumb-post
-      .info-top.time{"data-time" => '1453820543'}
-      .media-img
-        = image_tag "https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e35/12523756_1704697189776164_2012950135_n.jpg" , class: 'img-thumbnail'
-      .info-bot
-        .logo-user
-          = link_to "#", target: '_blank' do
-            .user-profile
-              .img-user{title: 'Khoi Nguyen'}
-                = image_tag "https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/s150x150/12407560_1514061502231213_34102038_a.jpg" , class: 'img-circle photo-profile'
-        .info-user
-          %span.pull-left.comment= 5
-          %span.pull-right.like= 5
-      .type-post
-
-
-.col-md-3.media-box
-  .post-box
-    .thumb-post
-      .info-top.time{"data-time" => '1453820543'}
-      .media-img
-        = image_tag "https://scontent.cdninstagram.com/hphotos-xat1/t51.2885-15/s640x640/sh0.08/e35/12599372_1519621218332811_804927763_n.jpg" , class: 'img-thumbnail'
-      .info-bot
-        .logo-user
-          = link_to "#", target: '_blank' do
-            .user-profile
-              .img-user{title: 'Khoi Nguyen'}
-                = image_tag "https://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/s150x150/12407560_1514061502231213_34102038_a.jpg" , class: 'img-circle photo-profile'
-        .info-user
-          %span.pull-left.comment= 5
-          %span.pull-right.like= 5
-      .type-post
+- posts.each do |post|
+  .col-md-3.media-box{"data-media-id" => post.id, 'data-lat' => post.location.latitude, 'data-lng' => post.location.latitude, 'data-thumb-url' => post.images.thumbnail.url, 'data-username' => post.user.username}
+    %a.profile-link{href: get_url_user(post.user.username), target: '_blank'}
+      .post-box{'data-toggle' => "tooltip", title: post.user.full_name}
+        .thumb-post
+          .info-top{"data-time" => post.created_time}
+            %span.user-name=  post.user.username
+            %span.time
+          .media-img
+            = image_tag post.images.standard_resolution.url, class: 'img-thumbnail'
+          .info-bot
+            .logo-user
+              .user-profile
+                .img-user
+                  = image_tag post.user.profile_picture , class: 'img-circle photo-profile'
+            .info-user
+              %span.pull-left.comment= post.comments[:count]
+              %span.pull-right.like= post.likes[:count]
 
 .clearfix
-.pull-right
+.text-center
+  = paginate posts, remote: true
