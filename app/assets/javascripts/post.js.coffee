@@ -51,18 +51,6 @@ markersPhoto = []
     return
   return
 
-@showImageAjaxLoading = ->
-  $("#search-form").ajaxSend ->
-    $(".ajax-loading").removeClass('hidden')
-    return
-  return
-
-@hideImageAjaxLoading = ->
-  $("#search-form").ajaxComplete ->
-    $(".ajax-loading").addClass('hidden')
-    return
-  return
-
 @getTimePost = ->
   $('.info-top').each ->
     time = parseInt($(@).data('time'))
@@ -125,8 +113,8 @@ markersPhoto = []
 $(document).ready ->
   $('[data-toggle="tooltip"]').tooltip()
   validateSearchForm()
-  showImageAjaxLoading()
   setLocationAddress()
   getTimePost()
   updateMarker()
+  $(".btn-search").trigger 'click'
   return
